@@ -1,0 +1,1976 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+body{
+	--mainColor: #11121e;
+	--mainColorDarkest: #1d1d29;
+	font-family: 'Inter', sans-serif;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	padding: 0;
+	margin: 0;
+	background-image: url("../voImg/logBack.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	z-index: 0;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--mainColor);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: slateblue;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--mainColorDarkest);
+}
+
+/*Formulaire de connexion*/
+.loginForm
+{
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: #151022;
+	padding: 10px 30px;
+	color: white;
+	border-radius: 5px;
+	max-width: 98%;
+}
+
+.connectTitle
+{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 20px;
+	font-size: 30px;
+	letter-spacing: 2px;
+	color: rgba(255, 255, 255, .5);
+}
+
+/*Logo du formulaire*/
+.connectTitle img
+{
+	height: 200px;
+}
+
+/*Div contenant les input et label du formulaire*/
+.inputCont
+{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	width: 80%;
+	margin: 0px 80px;
+	justify-content: center;
+	margin: 5px 50px;
+}
+
+.loginForm input
+{
+	border: solid 1px transparent;
+	background: rgba(255, 255, 255, .8);
+	padding: 10px;
+	font-size: 0.95rem;
+	border-radius: 15px;
+	transition: .3s;
+}
+
+.loginForm label
+{
+	width: 100%;
+}
+
+.loginForm input::placeholder
+{
+	color: rgba(0, 0, 0, .4);
+	font-weight: 600;
+}
+
+.loginForm input:focus
+{
+	outline: none;
+	border-color: white;
+}
+
+/*Bouton de connexion*/
+.connect
+{
+	font-size: 19px;
+	padding: 5px 20px;
+	border-radius: 5px;
+	border: solid 2px royalblue;
+	background: royalblue;
+	color: white;
+	cursor: pointer;
+	margin: 20px 0px;
+	transition: .2s;
+}
+
+.connect:hover
+{
+	background: transparent;
+	padding: 5px 50px;
+}
+
+/*Checkbox "se souvenir de moi" */
+.checkCont
+{
+	width: 80%;
+	color: rgba(255, 255, 255, .7);
+	user-select: none;
+	input-security: ;
+}
+
+/*bouton mot de passe oublié et connexion (LOGIN)*/
+.forget, .con
+{
+	cursor: pointer;
+	transition: .3s;
+	color: white;
+	opacity: .5;
+	letter-spacing: 3px;
+	margin: 30px;
+}
+
+.forget:hover, .con:hover
+{
+	opacity: 1;
+}
+
+#loginMdpo
+{
+	display: none;
+}
+
+/*Oeil pour voir le mot de passe*/
+.eye
+{
+	position: absolute;
+	height: 30px;
+	right: 10px;
+	cursor: pointer;
+	user-select: none;
+	opacity: .5;
+	transition: .3s;
+}
+
+.eye:hover
+{
+	opacity: 1;
+}
+
+/*Div d'avertissement*/
+.alert
+{
+	--alertGood: #08dc71;
+	background: var(--mainColor);
+	color: white;
+	position: fixed;
+	top: 10px;
+	max-width: 80vw;
+	border-radius: 5px;
+	padding: 20px 30px;
+	transition: .5s;
+	left: -100vw;
+	z-index: 1000;
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.alertTitle
+{
+	letter-spacing: 1px;
+	color: var(--alertGood);
+}
+
+.alertContent
+{
+	margin-top: 5px;
+	opacity: .7;
+	letter-spacing: 1px;
+}
+
+.back{
+	min-height: 100vh;
+	width: 100vw;
+	display: flex;
+	align-items: start;
+	background: var(--mainColor);
+}
+
+/*Menu sidebar*/
+.sideMenu
+{
+	user-select: none;
+	max-height: 100vh;
+	min-height: 100vh;
+	position: sticky;
+	left: 0;
+	top: 0;
+	margin-right: 100px;
+	background: var(--mainColorDarkest);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	color: white;
+	padding: 0px 20px;
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
+	transition: .3s;
+	z-index: 100;
+}
+
+/*Bouton d'ouverture (mobile)*/
+.toggleMenu
+{
+	position: fixed;
+	right: 30px;
+	top: 20px;
+	user-select: none;
+	z-index: 101;
+	display: none;
+}
+
+/*Disparition et apparition du texte SideMenu*/
+.sideTxt
+{
+	display: none;
+}
+
+/*Titre et logo*/
+.sideLogo {
+	height: 100px;
+	display: flex;
+	align-items: center;
+	justify-content: start;
+	font-size: 20px;
+	font-weight: 600;
+	letter-spacing: 1px;
+}
+
+.sideLogo img
+{
+	height: 100%;
+}
+/*Partie d'ajout*/
+.sideAddDiv
+{
+	background: #2b2d42;
+	padding: 10px;
+	border-radius: 10px;
+	max-width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin: 15px 0;
+}
+
+.sideAddDiv img
+{
+	cursor: pointer;
+	height: 40px;
+	opacity: .3;
+	transition: .2s;
+	margin: 10px;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.sideAddDiv img:hover
+{
+	opacity: 1;
+}
+
+/*Les liens de la sidenav*/
+.sideNavLinks
+{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	border-bottom: solid 1px rgba(255,255,255,.1);
+	padding-bottom: 20px;
+}
+
+.sideLink
+{
+	height: 30px;
+	display: flex;
+	align-items: center;
+	padding: 17px;
+	opacity: .5;
+	font-size: 20px;
+	transition: .3s;
+	border-radius: 15px;
+}
+
+#linkActive
+{
+	background: #000814;
+	opacity: 1;
+}
+
+.sideLink img
+{
+	height: 100%;
+	margin: 0 15px;
+}
+
+.sideLink:hover
+{
+	cursor: pointer;
+	background: #000814;
+	opacity: 1;
+}
+
+/*Le profil de la sidebar*/
+.sideProfile
+{
+	display: flex;
+	position: absolute;
+	bottom: 10px;
+	left: 5px;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+}
+
+.profilePic
+{
+	height: 90px;
+	min-width: 90px;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 20px;
+	margin-right: 20px;
+}
+
+.profilePic img
+{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.profileNom
+{
+	margin-bottom: 5px;
+	font-size: 17px;
+	font-weight: 600;
+}
+
+.profileMail
+{
+	font-size: 12px;
+	opacity: .4;
+}
+
+/*Option du profil*/
+.profileOption
+{
+	margin-left: 6%;
+	position: relative;
+}
+
+.profileOption img
+{
+	height: 30px;
+	opacity: .4;
+	user-select: none;
+	transition: .3s;
+}
+
+.profileOption img:hover
+{
+	cursor: pointer;
+	opacity: 1;
+}
+
+.optionShow
+{
+	display: none;
+	position: absolute;
+	bottom: 130%;
+	right: 0%;
+	background: #000814;
+	padding: 10px 20px;
+	border-radius: 10px;
+}
+
+.optionShow div
+{
+	cursor: pointer;
+	margin: 10px 0;
+	opacity: .5;
+	transition: .3s;
+}
+
+.optionShow div:hover
+{
+	opacity: 1;
+}
+
+/*Contenu Admin*/
+.content
+{
+	position: relative;
+	margin-top: 30px;
+	flex: 1;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.bigTitle
+{
+	color: white;
+	font-weight: bold;
+	font-size: 30px;
+	letter-spacing: 2px;
+	margin-bottom: 30px;
+	width: 100%;
+}
+
+.bigContent
+{
+	position: relative;
+	flex: 1;
+	min-width: 50%;
+	max-width: 50%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: start;
+	margin: 1px 0;
+}
+
+.bigContentExtended
+{
+	position: relative;
+	flex: 1;
+	min-width: 99.8%;
+	max-width: 99.8%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: start;
+	margin: 10px 0;
+}
+
+#membersList
+{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: start;
+	width: 100%;
+}
+
+/*Carte adminpanel*/
+
+.card
+{
+	position: relative;
+	background: var(--mainColorDarkest);
+	display: flex;
+	align-items: start;
+	justify-content: start;
+	flex-direction: column;
+	margin: 0.5%;
+	color: white;
+	padding: 20px;
+	border-radius: 10px;
+	height: min-content;
+	width: calc((50% - 1%) - 40px);
+}
+
+.memberCard
+{
+	position: relative;
+	background: var(--mainColorDarkest);
+	display: flex;
+	align-items: center;
+	justify-content: start;
+	flex-direction: column;
+	margin: 0.70%;
+	min-width: 334px;
+	max-width: 334px;
+	color: white;
+	padding: 10px;
+	border-radius: 10px;
+	height: min-content;
+	}
+
+#cardMin
+{
+	height: min-content;
+}
+
+.cardTitle
+{
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	font-size: 18px;
+	width: 100%;
+	min-height: 40px;
+}
+
+.cardTitle span
+{
+	width: 100%;
+}
+
+.cardTitle img
+{
+	position: relative;
+	height: 40px;
+	float: right;
+}
+
+.cardNumber
+{
+	font-size: 40px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+.cardPercentMonth
+{
+	font-size: 10.5px;
+	opacity: .7;
+	margin-bottom: 10px;
+	color: rgb(0,255,0);
+}
+
+.cardPercentMonth span
+{
+	color: white;
+	margin-left: 5px;
+	letter-spacing: 1px;
+}
+
+.min{
+	color: indianred;
+}
+
+.cardCircleDiv
+{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 10px 0px;
+}
+
+.cardCircle
+{
+	height: 120px;
+	width: 120px;
+	border: 15px solid royalblue;
+	border-radius: 100%;
+}
+
+.abs
+{
+	border-color: indianred;
+}
+
+/*Graphique de l'argent/an*/
+.cardGraphCont
+{
+	width: 100%;
+	display: flex;
+	margin-top: 20px;
+	overflow: hidden;
+	overflow-x: auto;
+	padding-bottom: 10px;
+	justify-content: start;
+}
+
+.cardGraphKeep
+{
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	align-items: start;
+	margin: 0 1%;
+}
+
+.full 
+{
+	max-width: calc((100% - 1%) - 40px);
+	min-width: calc((100% - 1%) - 40px);
+}
+
+.cardGraphFlex
+{
+	position: relative;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.cardGraphMonth
+{
+	margin-top: 10px;
+	text-transform: uppercase;
+	font-size: 14px;
+	opacity: .5;
+}
+
+.cardGraphBack
+{
+	position: relative;
+	background: rgba(255, 256, 255, .8);
+	height: 170px;
+	width: 50%;
+	border-radius: 20px;
+	margin: 0 2px;
+	overflow: hidden;
+}
+
+.cardGraph
+{
+	width: 100%;
+	background: royalblue;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 0%;
+	border-radius: 20px;
+	transition: .3s;
+}
+
+.cardGraphInfo
+{
+	position: absolute;
+	top: 0;
+	left: 100%;
+	z-index: 10;
+	background: var(--mainColor);
+	padding: 7px;
+	border-radius: 10px;
+	display: flex;
+	flex-direction: column;
+	opacity: 0;
+	transition: .3s;
+}
+
+.cardGraphFlex:hover .cardGraphInfo
+{
+	opacity: 1;
+}
+
+.cardGraphInfo span
+{
+	margin: 2px 0;
+	font-weight: bold;
+	font-size: 14px;
+}
+
+.incomeTxt
+{
+	color: royalblue;
+}
+
+.outcomeTxt
+{
+	color: indianred;
+}
+
+.outcome
+{
+	background: indianred;
+}
+
+/*Carte des cotisations annuel*/
+.cardLeftImg
+{
+
+}
+
+.percContentCotis
+{
+display: flex;
+justify-content: end;
+padding: 0 10px;
+align-items: center;
+flex: 1;
+}
+
+.percCircleCotis
+{
+height: 50px;
+width: 50px;
+display: flex;
+justify-content: center;
+align-items: center;
+border: 5px solid rgba(255,255,255,.7);
+border-radius: 100%;
+font-size: 14px;
+}
+
+.cardSousTitle
+{
+	margin-top: 20px;
+	margin-bottom: 10px;
+	font-weight: 500;
+	opacity: .4;
+}
+
+.cardSousTitle2
+{
+	margin-top: 0;
+	font-weight: 500;
+	font-size: 14px;
+	opacity: .4;
+}
+
+/*Tableau des évènements a venir (Accueil)*/
+.eventTable
+{
+	width: 100%;
+	border-radius: 2em;
+  	overflow: hidden;
+}
+
+.eventTable tr
+{
+	background: var(--mainColor);
+
+}
+
+.eventTable td
+{
+	text-align: center;
+}
+
+
+/*Div de gestion de table*/
+.adminTab
+{
+	color: white;
+	position: fixed;
+	z-index: 300;
+	background: var(--mainColor);
+	padding: 20px 40px;
+	max-width: 500px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 5px;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.adminTabTitle
+{
+	font-size: 19px;
+	padding-bottom: 10px;
+	border-bottom: solid 1px rgba(255,255,255,.1);
+	margin-bottom: 10px;
+}
+
+.adminTabSection
+{
+	display: flex;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+	border-bottom: solid 1px rgba(255,255,255,.1);
+}
+
+.sectionPart
+{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.adminTabSubTitle
+{
+	position: relative;
+	font-weight: bold;
+	letter-spacing: 1px;
+	min-height: 100%;
+	min-width: 130px;
+	max-width: 130px;
+}
+
+.adminTabInput
+{
+	display: flex;
+	padding-left: 5px;
+	flex-direction: column;
+	justify-content: start;
+}
+
+.adminTabInput label
+{
+	padding-left: 10px;
+}
+
+.adminTabInput input, .adminTabInput select
+{
+	background: rgba(255, 255, 255, .6);
+	border: 1px solid transparent;
+	padding: 5px 10px;
+	font-size: 17px;
+	border-radius: 5px;
+	transition: .3s;
+	margin: 10px;
+}
+
+.adminTabInput input:focus, .adminTabInput select:focus
+{
+	outline: none;
+	border-color: rgba(255, 255, 255, .8);
+}
+
+.adminTabButtons
+{
+	width: 100%;
+	display: flex;
+	justify-content: end;
+	margin: 10px 0;
+}
+
+.adminTabButtons button
+{
+	padding: 8px 15px;
+	border: none;
+	font-size: 14px;
+	font-weight: bold;
+	text-transform: uppercase;
+	border-radius: 5px;
+	background: transparent;
+	cursor: pointer;
+	transition: .3s;
+	color: rgba(255, 255, 255, .5);
+}
+
+.adminTabButtons button:hover
+{
+	color: white;
+}
+
+.adminTabButtons .valid
+{
+	background: royalblue;
+	color: white;
+	border: solid 2px royalblue;
+}
+
+.adminTabButtons .valid:hover
+{
+	background: none;
+}
+
+.adminTabScroll
+{
+	position: relative;
+	overflow-y: auto;
+	overflow-x: hidden;
+	max-height: 70vh;
+}
+
+.adminTabPresList
+{
+	max-height: 90%;
+	overflow-y: auto;
+
+}
+
+#addMbrsForm, #addEvtForm, #addGenderForm, .adminTabPresList, #confirmDiv, .modifyEvtTab, #addMoneyForm, .modifyMbrTab
+{
+	display: none;
+}
+
+#addGenderForm
+{
+	z-index: 301;
+	background: var(--mainColorDarkest);
+}
+
+label
+{
+	position: relative;
+	display: flex;
+	align-items: center;
+	margin-right: 20px;
+}
+.addGenderButt
+{
+	height: 20px;
+	left: 90%;
+	position: absolute;
+	opacity: .4;
+	cursor: pointer;
+	user-select: none;
+	transition: .3s;
+}
+
+.addGenderButt:hover
+{
+	opacity: 1;
+}
+
+.eventLine
+{
+	display: flex;
+	width: 97%;
+	justify-content: start;
+	align-items: center;
+	background: var(--mainColor);
+	padding: 5px 10px;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	position: relative;
+}
+
+.eventData
+{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: indianred;
+	padding: 10px;
+	border-radius: 5px;
+	min-width: 60px;
+}
+
+.eventLineDate
+{
+	min-width: max-content;
+	border-radius: 2px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-weight: 500;
+	letter-spacing: 1px;
+}
+
+.eventLineHour
+{
+	font-size: 25px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+.eventLineInfo
+{
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	justify-content: start;
+	padding: 20px;
+}
+
+.eventLineTitle
+{
+	font-weight: bold;
+	font-size: 23px;
+	letter-spacing: 1px;
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	justify-content: start;
+	border-radius: 2px;
+	margin-bottom: 10px;
+}
+
+.eventLineLieu
+{
+	min-width: max-content;
+	border-radius: 2px;
+	font-size: 17px;
+	opacity: .6;
+	transition: .3s;
+}
+
+.eventLineLieu:hover
+{
+	opacity: 1;
+}
+
+.eventLinePres
+{
+	font-size: 18px;
+	letter-spacing: 1px;
+	font-weight: 600;
+	background: royalblue;
+	border: 2px solid;
+	border-color: royalblue;
+	cursor: pointer;
+	transition: .3s;
+	color: white;
+	position: relative;
+	display: flex;
+	align-items: center;
+	padding: 10px;
+	border-radius: 10px;
+	margin-left: 10%;
+}
+
+.eventLinePres img 
+{
+	height: 27px;
+}
+
+.eventLinePres:hover
+{
+	background: none;
+	transform: scale(1.05);
+}
+
+.eventLineSub
+{
+	display: flex;
+	width: 70%;
+	min-width: min-content;
+}
+
+.optionShowSlide
+{
+	background: #000814;
+	padding: 10px 20px;
+	position: absolute;
+	bottom: -70%;
+	right: 100%;
+	border-radius: 5px;
+	display: none;
+}
+
+.optionShowSlide div 
+{
+	margin: 7px 0;
+	cursor: pointer;
+	opacity: .5;
+	transition: .3s;
+}
+
+.optionShowSlide div:hover
+{
+	opacity: 1;
+}
+
+.closeOption
+{
+	position: absolute;
+	top: 10px;
+	right: 20px;
+	background: none;
+	border: none;
+	z-index: 10;
+	display: none;
+}
+
+/*Div de confirmation*/
+#confirmPhrs
+{
+	font-size: 17px;
+}
+
+/*Option général*/
+.absRight
+{
+	position: absolute;
+	right: 20px;
+}
+
+.loaderContent
+{
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100vw;
+	position: fixed;
+	background: rgba(0, 0, 0, .7);
+	backdrop-filter: blur(5px);
+	z-index: 1000;
+	display: none;
+	justify-content: center;
+	align-items: center;
+}
+
+.loader
+{
+	position: relative;
+	height: 5vh;
+	width: 5vh;
+	border-radius: 100%;
+	border: rgba(255, 255, 255, .2) 7px solid;
+	border-top-color: royalblue;
+	transition: .3s;
+	animation: 3s linear 0s infinite rotate;
+}
+
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes load {
+
+}
+/*Div de présence*/
+.presLine
+{
+	display: flex;
+	justify-content: start;
+	align-items: center;
+	margin: 10px;
+}
+
+.presLinePic
+{
+	overflow: hidden;
+	height: 100%;
+	border-radius: 10px;
+	height: 70px;
+	width: 70px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-right: 10px;
+	transition: .3s;
+}
+
+.presLinePic img 
+{
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+}
+
+.presLineName
+{
+	font-weight: bold;
+	font-size: 16px;
+	display: flex;
+	flex-direction: column;
+	width: max-content;
+	margin-right: 50px;
+	flex: 1;
+}
+
+.presLineName span 
+{
+	opacity: .4;
+	font-weight: 500;
+	font-size: 15px;
+	margin-top: 5px;
+	letter-spacing: 1px;
+}
+
+.etatPres
+{
+	transition: .3s;
+	cursor: pointer;
+
+}
+
+.etatPres:hover 
+{
+	transform: scale(1.1);
+}
+
+.closeTable
+{
+	position: absolute;
+	top: 13px;
+	right: 13px;
+	background: none;
+	border: none;
+	cursor: pointer;
+	transition: .3s;
+}
+
+.closeTable:hover 
+{
+	transform: scale(1.1);
+}
+
+.closeTable img 
+{
+	height: 30px;
+	
+}
+
+/*Page membres*/
+/*Filtrage des membres*/
+.filterCard
+{
+	width: 99.9%;
+	display: flex;
+	flex-wrap: wrap;
+	padding-bottom: 15px;
+}
+
+.filterSub
+{
+	color: rgba(255, 255, 255, .4);
+	margin: 10px 15px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.filterSub select, .filterSub input
+{
+	border-radius: 30px;
+	background: royalblue;
+	margin: 0 10px;
+	color: white;
+	border: solid 2px royalblue;
+	font-size: 18px;
+	padding: 7px;
+	transition: .2s;
+	cursor: pointer;
+}
+
+.filterSub input[type=checkbox]
+{
+	display: none;
+}
+
+.filterSub label
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
+
+.filterSub label .checkStyle
+{
+	background: white;
+	border-radius: 2px;
+	width: 15px;
+	height: 15px;
+	margin: 10px;
+	transition: .2s;
+}
+
+.filterSub label:hover .checkStyle
+{
+	background: lightgrey;
+}
+
+.filterSub input:checked ~ .checkStyle
+{
+	background: royalblue;
+}
+
+.filterSub input:focus, .filterSub select:focus
+{
+	outline: none;
+	border-color: white;
+}
+
+.filterSub select:hover
+{
+	background: transparent;
+}
+
+.filterSub input[type=checkbox]
+{
+	margin: 0 0;
+}
+
+.filterSub input[type=month]
+{
+	padding: 5px 10px;
+}
+
+.filterSub select option 
+{
+	color: black;
+}
+
+.filterSub select:hover
+{
+	background: none;
+}
+
+.filterSubSend
+{
+	display: flex;
+	justify-content: end;
+	align-items: center;
+	position: relative;
+	flex:1;
+	margin-right: 60px;
+}
+
+.filterSubSend button
+{
+	position: relative;
+	background: transparent;
+	color: white;
+	font-size: 17px;
+	font-weight: 400;
+	padding: 7px 40px;
+	border: solid 2px royalblue;
+	border-radius: 15px;
+	transition: .2s;
+	cursor: pointer;
+
+}
+
+.filterSubSend .annuler
+{
+	padding: 0 10px;
+	border: none;
+	opacity: .5;
+	text-decoration: underline;
+}
+
+.filterSubSend .annuler:hover
+{
+	background: none;
+	opacity: 1;
+}
+
+.filterSubSend button:hover
+{
+	background: royalblue;
+}
+
+/*Carte de membre*/
+.memberCard .memberSelect
+{
+	height: 30px;
+	width: 30px;
+	background: var(--mainColor);
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	border-radius: 100%;
+	cursor: pointer;
+	transition: .2s;
+}
+
+.memberCard input[type = checkbox]
+{
+	display: none;
+}
+
+.memberCard input:checked ~ label
+{
+	background: royalblue;
+}
+
+.selectValide
+{
+	position: fixed;
+	background: royalblue;
+	border: none;
+	bottom: -100%;
+	right: 10px;
+	border-radius: 5px;
+	height: 40px;
+	padding: 0 30px;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+	z-index: 50;
+	transition: .3s;
+	
+}
+
+.selectValide:hover img
+{
+	transform: scale(1.05);
+}
+
+.selectValide img 
+{
+	height: 100%;
+	cursor: pointer;
+	transition: .2s;
+}
+
+.memberPic
+{
+	position: relative;
+	height: 130px;
+	width: 130px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 100%;
+	margin: 30px;
+	box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+	cursor: pointer;
+	transition: .2s;
+}
+
+.memberPic:hover
+{
+	transform: scale(1.05);
+}
+
+.memberPic:active
+{
+	transform: scale(.99);
+}
+
+.memberPic img
+{
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	border-radius: 100%;
+}
+
+.memberDot
+{
+	background: seagreen;
+	border-radius: 100%;
+	height: 20px;
+	width: 20px;
+	position: absolute;
+	bottom: 5px;
+	left: 10px;
+}
+
+.memberName
+{
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	font-size: 22px;
+	letter-spacing: 3px;
+	width: 100%;
+	font-weight: bold;
+	margin: 0 50px 20px 50px;
+}
+
+.memberName span 
+{
+	margin-top: 5px;
+	font-size: 16px;
+	font-weight: 500;
+	opacity: .6;
+	letter-spacing: 2px;
+}
+
+.memberOption
+{
+	height: 30px;
+	margin: 10px 0;
+}
+
+.memberOption img 
+{
+	height: 100%;
+	margin: 0 5px;
+	opacity: 0.5;
+	transition: .2s;
+	cursor: pointer;
+}
+
+.memberOption img:hover
+{
+	opacity: 1;
+}
+
+.memberPres
+{
+	display: flex;
+	justify-content: center;
+	border-top: rgba(255,255,255,.5) solid 1px;
+	border-bottom: rgba(255,255,255,.5) solid 1px;
+	padding: 20px 20px;
+	font-size: 20px;
+	width: auto;
+}
+
+.memberPresLeft
+{
+	font-weight: 500;
+	letter-spacing: 2px;
+	width: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 14px;
+	margin-right: 10px;
+	margin-right: 50px;
+}
+
+.memberPresLeft span 
+{
+	color: lightgreen;
+	margin-right: 2px;
+}
+
+.memberPresRight
+{
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	font-size: 50px;
+	font-weight: bold;
+}
+
+.memberPresRight span 
+{
+	font-size: 15px;
+	font-weight: 500;
+	opacity: .6;
+	width: max-content;
+}
+
+.memberProfil
+{
+	margin-top: 20px;
+	font-size: 20px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	color: white;
+	background: royalblue;
+	border: solid 3px royalblue;
+	padding: 10px 30%;
+	border-radius: 10px;
+	cursor: pointer;
+	transition: .3s;
+}
+
+.memberProfil:hover 
+{
+	background: none;
+}
+
+#txtAreaConfirm 
+{
+	margin: 10px 0;
+}
+
+#txtAreaConfirm textarea
+{
+	background: rgba(255,255,255,.8);
+	border: 1px solid transparent;
+	border-radius: 10px;
+	padding-left: 10px;
+	padding-top: 10px;
+	transition: .2s;
+}
+
+#txtAreaConfirm textarea:focus 
+{
+	outline: none;
+	border-color: var(--mainColorDarkest);
+}
+
+#txtAreaConfirm textarea::placeholder 
+{
+	color: black;
+	opacity: .8;
+	font-weight: bold;
+}
+
+/*Page profil de membre*/
+.profilePicContain
+{
+	position: relative;
+	height: 200px;
+	width: 200px;
+	margin: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	border-radius: 100%;
+	transition: .2s;
+}
+
+.profilePicContain:hover
+{
+	transform: scale(1.05);
+	cursor: pointer;
+}
+
+.profilePicContain:active 
+{
+	transform: scale(0.95);
+}
+
+.profilePicContain img 
+{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+}
+
+.profilInputDiv
+{
+	margin: 8px 0;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.profilInputDiv label
+{
+	margin-bottom: 7px;
+	font-size: 18px;
+}
+
+.profilInputDiv input, .profilInputDiv select
+{
+	background: rgba(255, 255, 255, .7);
+	border: 1px solid rgba(255, 255, 255, .5);
+	width: 90%;
+	height: 30px;
+	border-radius: 5px;
+	transition: .2s;
+	font-size: 17px;
+	letter-spacing: 0.5px;
+}
+
+.profilInputDiv input:focus, .profilInputDiv select:focus
+{
+	outline: none;
+	border-color: royalblue;
+}
+
+.profilePicName
+{
+	color: white;
+	font-size: 25px;
+	font-weight: bold;
+	display: flex;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	justify-content: center;
+	align-items: center;
+	margin: 10px 0;
+	width: 100%;
+	flex-direction: column;
+}
+
+.profilePicName span
+{
+	text-transform: none;
+	font-size: 18px;
+	margin: 5px 0;
+	opacity: .5;
+	letter-spacing: 2px;
+}
+
+.profilTransacDiv
+{
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	background: var(--mainColor);
+	border-radius: 10px;
+	margin: 5px 0;
+}
+
+.profilTransacCol
+{
+	margin: 0 20px;
+	font-size: 19px;
+
+	width: 190px;
+	display: flex;
+	justify-content: center;
+	padding: 10px;
+}
+
+.profilTransacType
+{
+	font-size: 15px;
+	justify-content: end;
+	position: relative;
+	cursor: pointer;
+}
+
+.profilTransacType span 
+{
+	padding: 5px 10px;
+	border-radius: 10px;
+	font-weight: bold;
+}
+
+.profilTransacPrice
+{
+	font-weight: bold;
+	color: indianred;
+	letter-spacing: 1px;
+}
+
+.profilTransacDate
+{
+	opacity: .5;
+}
+
+.profilTransacEventShow
+{
+	position: absolute;
+	background: var(--mainColorDarkest);
+	padding: 10px 20px;
+	border-radius: 10px;
+	right: 100%;
+	flex-direction: column;
+	width: max-content;
+	bottom: 5px;
+	display: none;
+	line-height: 20px;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.profilTransacEventShow div 
+{
+	width: 100%;
+	text-align: center;
+	font-weight: bold;
+	letter-spacing: 2px;
+}
+
+.profilTransacEventShow span 
+{
+	position: relative;
+	text-align: center;
+	width: 100%;
+	opacity: .5;
+}
+
+.profilPresenceDiv
+{
+	width: 100%;
+	display: flex;
+	align-items: center;
+	margin: 5px 0;
+	justify-content: center;
+}
+
+.cardScroll
+{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	height: 125px;
+	overflow-y: auto;
+}
+
+.profilPresenceDiv div 
+{
+	margin: 0 10px;
+	display: flex;
+	width: 50%;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.profilPresenceTitle
+{
+	text-align: center;
+}
+
+.profilPresenceStatut
+{	
+	text-align: end;
+	display: flex;
+	align-items: end;
+}
+
+.profilPresenceStatut span 
+{
+	background: blue;
+	padding: 5px 15px;
+	border-radius: 10px;
+}
+
+.profilPresenceTitle
+{
+	font-weight: bold;
+	letter-spacing: 2px;
+}
+
+.profilPresenceTitle span 
+{
+	opacity: .5;
+	font-weight: 400;
+	letter-spacing: 1px;
+}
+
+.picLoader
+{
+	height: 100%;
+	width: 100%;
+	border-radius: 100%;
+	z-index: 10;
+	border: solid 5px transparent;
+	border-top: solid 5px royalblue;
+	box-sizing: border-box;
+	backdrop-filter: blur(3px);
+	display: none;
+	animation: 3s linear 0s infinite rotate;
+}
+
+#modifyPicProfile
+{
+	display: none;
+}
+
+.valideFloatButton
+{
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+}
+
+.valideFloatButton button 
+{
+	font-size: 17px;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	padding: 5px 10px;
+	background: royalblue;
+	border-radius: 5px;
+	border: 3px solid royalblue;
+	color: white;
+	cursor: pointer;
+	transition: .3s;
+}
+
+.valideFloatButton button:hover
+{
+	background: transparent;
+}
+
+@media screen and (max-width: 1458px)
+{
+	.card{
+		min-width: 88%;
+	}
+
+	.eventLine
+	{
+		justify-content: start;
+		
+	}
+
+	.eventLinePres
+	{
+		margin-left: 0%;
+
+	}
+
+	.eventLinePres span
+	{
+		display: none;
+	}
+}
+@media screen and (max-width: 1033px){
+	.bigContent
+	{
+		min-width: 100%;
+		justify-content: center;
+	}
+}
+@media screen and (max-width: 800px) {
+	.adminTab
+	{
+		max-width: 97vw;
+	}
+
+	.adminTabSubTitle
+	{
+		display: none;
+	}
+
+	.sideMenu{
+		margin-right: 10px;
+		position: fixed;
+		
+		width: 80vw;
+		left: -100vw;
+	}
+
+	.toggleMenu
+	{
+		display: block;
+	}
+
+	.sideTxt
+	{
+		display: block;
+	}
+
+	.card{
+		width: 100%;
+	}
+
+	.bigContent
+	{
+		min-width: 100%;
+		justify-content: start;
+		margin-left: 5px;
+	}
+
+	.bigTitle
+	{
+		margin-left: 10px;
+	}
+
+	.content
+{
+	margin-top: 30px;
+	flex: 1;
+	min-width: 99vw;
+	max-width: 99vw;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.eventLineTitle, .eventLineHour
+{
+	font-size: 17px;
+}
+
+.optionShowSlide
+{
+	position: fixed;
+	align-items: start;
+	height: max-content;
+	justify-content: start;
+	z-index: 80;
+	left: 0;
+	bottom: 0;
+	width: 100vw;
+	padding: 0 0;
+	padding-top: 10px;
+}
+
+.optionShowSlide div
+{
+	font-size: 20px;
+	margin: 20px 0;
+	margin-left: 20px;
+}
+
+.closeOption
+{
+	display: block;
+}
+}
